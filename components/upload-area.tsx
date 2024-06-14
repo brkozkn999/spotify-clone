@@ -27,6 +27,9 @@ export function UploadArea() {
         const id = await saveSongStorageId({ songStorageId: (uploaded[0].response as any).storageId, title });
         setSongId(id);
         setTitle("");
+        toast({
+            description: "Your song uploaded successfully!",
+        })
     };
 
     const saveImageStorageId = useMutation(api.files.saveImageStorageId);

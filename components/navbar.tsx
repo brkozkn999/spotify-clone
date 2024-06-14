@@ -5,6 +5,7 @@ import ThemeSwitcher from "./theme-switcher";
 import { UserButton } from "@clerk/clerk-react";
 import { useTheme } from 'next-themes';
 import { cn } from "@/lib/utils";
+import { OrganizationSwitcher } from "@clerk/nextjs";
 
 export const Navbar = () => {
     const { theme } = useTheme();

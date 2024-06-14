@@ -10,6 +10,7 @@ import Image from "next/image";
 import AudioPlayer from "@/components/audio-player";
 import { AddSongModal } from "./_components/add-song-modal";
 import { useTheme } from "next-themes";
+import { useOrganization } from "@clerk/nextjs";
 
 const Home = () => {
     const { theme } = useTheme();
@@ -21,7 +22,7 @@ const Home = () => {
     const [artist, setArtist] = useState('');
     const [coverArt, setCoverArt] = useState<string | null>('');
     const [showFavorites, setShowFavorites] = useState(false);
-
+    
     const [currentIndex, setCurrentIndex] = useState<number>(-1);
 
     const handleNext = () => {
