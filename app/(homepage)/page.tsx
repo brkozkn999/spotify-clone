@@ -10,7 +10,6 @@ import Image from "next/image";
 import AudioPlayer from "@/components/audio-player";
 import { AddSongModal } from "./_components/add-song-modal";
 import { useTheme } from "next-themes";
-import { SignIn, useUser } from "@clerk/nextjs";
 
 const Home = () => {
     const { theme } = useTheme();
@@ -71,11 +70,6 @@ const Home = () => {
     }
 
     const filteredSongList = showFavorites ? songList.filter(file => file.favorite) : songList;
-
-    const { user } = useUser();
-
-    if (!user)
-        return <SignIn />;
 
     return (
         <div className="min-h-screen bg-gradient-to-br">
