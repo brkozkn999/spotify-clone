@@ -1,9 +1,9 @@
-import type { Metadata } from "next";
-import { Comfortaa } from "next/font/google";
-import "./globals.css";
 import { ConvexClientProvider } from "@/providers/convex-client-provider";
 import { Toaster } from "@/components/ui/toaster";
 import { ThemeProvider } from "next-themes";
+import type { Metadata } from "next";
+import { Comfortaa } from "next/font/google";
+import "./globals.css";
 
 const comfortaa = Comfortaa({ subsets: ["latin"] });
 
@@ -20,15 +20,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={comfortaa.className}>
-        <ConvexClientProvider>
-        <ThemeProvider
-            attribute="class"
-            defaultTheme="dark"
-            disableTransitionOnChange>
-          {children}
+        <ThemeProvider attribute="class" defaultTheme="dark" disableTransitionOnChange>
+              <ConvexClientProvider>
+                {children}
+                <Toaster />
+              </ConvexClientProvider>
           </ThemeProvider>
-          <Toaster />
-        </ConvexClientProvider>
       </body>
     </html>
   );

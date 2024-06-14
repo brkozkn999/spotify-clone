@@ -111,9 +111,9 @@ const AudioPlayer: React.FC<AudioPlayerProps> = ({ id, songUrl, title, artist, c
                 </div>
                 <button
                     onClick={handleFavorite}
-                    className="transform transition hover:scale-125 active:scale-150 ml-10">
+                    className="transform transition hover:scale-125 active:scale-150 mr-20">
                     <Heart
-                        size={30}
+                        size={20}
                         className={cn(
                             theme === 'dark' ? "text-white" : "text-black",
                             isFavorite && "text-red-600 fill-red-600"
